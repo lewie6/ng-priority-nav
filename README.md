@@ -2,6 +2,7 @@
 A Priority Navigation component for AngularJs
 
 Demo (need to improve this!)
+
 [DEMO](http://lewie6.github.io/ng-priority-nav/demo/index.html)
 
 
