@@ -3,10 +3,10 @@ A Priority Navigation component for AngularJs
 
 AngularJs directive that turns your navigation into the priority navigation design pattern.
 
-Download the source from dist/ng-priority-nav.min.js and include it in your project.
-
+Download the source from dist/ng-priority-nav.min.js and include it in your project, then include the module
+```
 angular.module('app', ['ngPriorityNav']);
-
+```
 Or use Bower (coming soon)
 
 # Example usage:
