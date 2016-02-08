@@ -1,0 +1,88 @@
+.priority-nav {
+  width: 100%;
+  white-space: nowrap;
+  display: block;
+  position: relative;
+}
+.priority-nav > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.priority-nav .vertical-nav {
+  display: inline-block;
+  position: relative;
+}
+@media  only screen and (max-width:749px)  {
+  .priority-nav .vertical-nav {
+    float: right;
+  }
+}
+.priority-nav .vertical-nav:before {
+  content: '';
+  height: 120%;
+  width: 100%;
+  bottom: -20%;
+  display: block;
+  position: absolute;
+}
+.priority-nav .vertical-nav .more-link {
+  display: inline-block;
+  position: relative;
+  padding: 0 0.5em;
+  font-size: 1.5em;
+}
+.priority-nav .vertical-nav .more-link .bubble {
+  font-size: 0.5em;
+  background: #eee;
+  padding: 0.33333333333333em;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 0.7em;
+  position: absolute;
+  line-height: 1em;
+  text-align: center;
+  top: -0.4em;
+  right: 0.1em;
+}
+.priority-nav .vertical-nav .more-link:after {
+  content: '';
+  transform-origin: bottom;
+  -webkit-transform-origin: bottom;
+  display: block;
+  position: absolute;
+  bottom: -0.5em;
+  left: 50%;
+  margin-left: -0.5em;
+  height: 0;
+  width: 0;
+  border: 0.5em solid transparent;
+  border-bottom: 0.5em solid #eee;
+}
+.priority-nav .vertical-nav .vertical-nav-dropdown {
+  top: 100%;
+  margin-top: 0.5em;
+  right: 0;
+  z-index: -999;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 15em;
+  position: absolute;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  background-color: #eee;
+}
+.priority-nav .vertical-nav .vertical-nav-dropdown > * {
+  display: block !important;
+  margin: 0.5em !important;
+}
+.priority-nav .vertical-nav:hover {
+  z-index: 99;
+}
+.priority-nav .vertical-nav:hover .vertical-nav-dropdown {
+  z-index: 999;
+}
+.priority-nav.go-away,
+.priority-nav .go-away {
+  z-index: -999;
+}
