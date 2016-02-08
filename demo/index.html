@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html id="ng-app" ng-app="app" ng-controller="MyController as ctrl">
 <head>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../dist%20-%20coming%20soon/priority-nav.css" />
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <link rel="stylesheet" href="../demo/index.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+  <script src="../demo/index.js"></script>
   <script src="../src/ng-priority-nav.module.js"></script>
   <script src="../src/ng-priority-nav.service.js"></script>
   <script src="../src/ng-priority-nav.directive.js"></script>
@@ -13,9 +15,19 @@
 <h1>Priority Nav Demo</h1>
 <div>
   <h3>Example</h3>
-  <div priority-nav>
-    <div ng-repeat="navItem in ctrl.navItems">{{navItem.title}}</div>
-  </div>
+  <nav class="navbar navbar-light bg-faded">
+    <ul class="nav" ng-priority-nav>
+      <li
+        class=""
+        ng-class="{active:$index===2}"
+        ng-repeat="navItem in ctrl.navItems">
+        <a
+          class=""
+          ng-bind="navItem.title">
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
 </body>
 

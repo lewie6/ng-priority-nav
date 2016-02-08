@@ -1,16 +1,15 @@
 'use strict';
 
-angular.module('ngPriorityNav').directive('priorityNav', function($timeout, $window, PriorityNavService){
+angular.module('ngPriorityNav').directive('ngPriorityNav', function($timeout, $window, PriorityNavService){
   return {
     restrict: 'A',
     priority: -999,
     link: function (scope, horizontalNav, attrs) {
-
       var
         verticalNav =
           angular.element(
             '<div class="vertical-nav">' +
-              '<div class="more-link icon-applaud-burger"><span class="bubble"></span></div>' +
+              '<div class="more-link fa-cogs fa"><span class="bubble"></span></div>' +
               '<div class="vertical-nav-dropdown"></div>' +
             '</div>'
           ),
