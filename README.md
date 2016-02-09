@@ -39,3 +39,7 @@ You can add some css classes (in addition to the default ones) :
 Is a bit basic at the moment, with a few simple options... To improve!
 
 Has high level unit tests, could probably do with few more.
+
+#Alternatives
+* https://github.com/gijsroge/priority-navigation (js)
+* https://github.com/matthornsby/priority-navigation (jQuery)
