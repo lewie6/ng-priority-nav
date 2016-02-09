@@ -28,3 +28,8 @@ Or Dynamic?... this will listen for changes to your model and re-apply the direc
   <div ng-repeat="navItem in navItems">{{navItem.title}}</div>
 </div>
 ```
+You can add some css classes (in addition to the default ones) :
+* ng-priority-nav-class
+* ng-priority-nav-more-link-class
+* ng-priority-nav-drop-down-class
+* ng-priority-nav-bubble-class
