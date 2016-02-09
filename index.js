@@ -16,4 +16,10 @@ app.controller('MyController', ['$scope', function($scope) {
     { title: "Nav item 10" }
   ];
 
+  this.navItems2 = angular.copy(this.navItems);
+
+  this.add = function (item, arr){
+    arr.push(item);
+  }
+
 }]);

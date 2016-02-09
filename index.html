@@ -12,23 +12,73 @@
   <script src="ng-priority-nav.directive.js"></script>
 </head>
 <body class="container-fluid">
-<h1>Priority Nav Demo</h1>
-<div>
-  <h3>Example</h3>
-  <nav class="navbar navbar-light bg-faded">
-    <ul class="nav" ng-priority-nav ng-priority-nav-more-link-class="fa fa-list">
-      <li
-        class=""
-        ng-class="{active:$index===2}"
-        ng-repeat="navItem in ctrl.navItems">
-        <a
+  <h1>Priority Nav Demo</h1>
+  <p>A very simple directive, with simple options</p>
+  <div>
+    <h3>Simple example</h3>
+    <pre>
+      &lt;nav class=&quot;navbar navbar-light bg-faded&quot;&gt;
+        &lt;ul class=&quot;nav&quot; <strong>ng-priority-nav ng-priority-nav-more-link-class=&quot;fa fa-list&quot;</strong>&gt;
+          &lt;li ng-repeat=&quot;navItem in ctrl.navItems&quot;&gt;
+            &lt;a ng-bind=&quot;navItem.title&quot;&gt; &lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    </pre>
+    <nav class="navbar navbar-light bg-faded">
+      <ul class="nav" ng-priority-nav ng-priority-nav-more-link-class="fa fa-list">
+        <li
           class=""
-          ng-bind="navItem.title">
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+          ng-class="{active:$index===2}"
+          ng-repeat="navItem in ctrl.navItems">
+          <a
+            class=""
+            ng-bind="navItem.title">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+
+  <div>
+    <h3>Dynamic example</h3>
+    <pre ng-non-bindable>
+      &lt;nav class=&quot;navbar navbar-light bg-faded&quot;&gt;
+        &lt;ul class=&quot;nav&quot; <strong>ng-priority-nav=&quot;&#123;&#123;ctrl.navItems2&#125;&#125;&quot; ng-priority-nav-more-link-class=&quot;fa fa-list&quot;</strong>&gt;
+          &lt;li ng-repeat=&quot;navItem in ctrl.navItems&quot;&gt;
+            &lt;a ng-bind=&quot;navItem.title&quot;&gt; &lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    </pre>
+    <form class="form-inline" ng-submit="ctrl.add({title:title}, ctrl.navItems2)">
+      <div class="form-group">
+        <input placeholder="Enter a menu item name"  class="form-control" ng-required="true" type="text" ng-model="title">
+        <button
+          class="btn btn-default"
+          type="submit">
+          Add
+        </button>
+      </div>
+    </form>
+
+    <nav class="navbar navbar-light bg-faded">
+      <ul class="nav" ng-priority-nav="{{ctrl.navItems2}}" ng-priority-nav-more-link-class="fa fa-list">
+        <li
+          class=""
+          ng-class="{active:$index===2}"
+          ng-repeat="navItem in ctrl.navItems2">
+          <a
+            class=""
+            ng-bind="navItem.title">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
 </body>
 
 </html>
