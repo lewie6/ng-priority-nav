@@ -8,7 +8,7 @@ AngularJs directive that turns your navigation into the priority navigation desi
 
 No dependancies.
 
-Download the source from dist/ng-priority-nav.min.js and include it in your project, then include the module
+Download the source from dist and include it in your project, then include the module
 ```
 angular.module('app', ['ngPriorityNav']);
 ```
