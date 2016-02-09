@@ -93,7 +93,7 @@ angular.module('ngPriorityNav')
   service.sortChildrenAndAppend = function (wrapperElem){
     var children = wrapperElem.children();
     children.sort(function(a, b) {
-      return angular.element(a).attr('data-priority-nav-index') > angular.element(b).attr('data-priority-nav-index') ? 1 : -1
+      return parseInt(angular.element(a).attr('data-priority-nav-index')) > parseInt(angular.element(b).attr('data-priority-nav-index')) ? 1 : -1
     });
     for (var i = 0; i < children.length; ++i) {
       wrapperElem.append(children[i]);
