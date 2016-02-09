@@ -1,16 +1,16 @@
 'use strict';
-
-angular.module('ngPriorityNav').directive('ngPriorityNav', function($timeout, $window, PriorityNavService){
+angular.module('ngPriorityNav').directive('ngPriorityNav', ['$timeout', '$window', 'PriorityNavService', '$interpolate', function($timeout, $window, PriorityNavService, $interpolate) {
   return {
     restrict: 'A',
     priority: -999,
     link: function (scope, horizontalNav, attrs) {
+
       var
         verticalNav =
           angular.element(
             '<div class="vertical-nav">' +
-              '<div class="more-link fa-cogs fa"><span class="bubble"></span></div>' +
-              '<div class="vertical-nav-dropdown"></div>' +
+            '<div class="more-link"><span class="bubble"></span></div>' +
+            '<div class="vertical-nav-dropdown"></div>' +
             '</div>'
           ),
         verticalNavMoreLink = angular.element(verticalNav[0].querySelector('.more-link')),
@@ -18,10 +18,13 @@ angular.module('ngPriorityNav').directive('ngPriorityNav', function($timeout, $w
         verticalNavMoreLinkBubble = angular.element(verticalNav[0].querySelector('.bubble'));
 
       horizontalNav.addClass('priority-nav');
-
+      horizontalNav.addClass(attrs.ngPriorityNavClass);
+      verticalNavMoreLink.addClass(attrs.ngPriorityNavMoreLinkClass);
+      verticalNavDropDown.addClass(attrs.ngPriorityNavDropDownClass);
+      verticalNavMoreLinkBubble.addClass(attrs.ngPriorityNavBubbleClass);
 
       var initDebounced = PriorityNavService.debounce(function() {
-        init(horizontalNav, verticalNav, verticalNavDropDown, verticalNavMoreLinkBubble, false, 'sss');
+        init(horizontalNav, verticalNav, verticalNavDropDown, verticalNavMoreLinkBubble, false);
       }, 500); // Maximum run of 1 per 500 milliseconds
 
 
@@ -45,17 +48,16 @@ angular.module('ngPriorityNav').directive('ngPriorityNav', function($timeout, $w
         });
       }
 
-
-      //for dynamic nav items, you can add the binded {{object/model}} into the priorityNav attribute...
-      // then if your object/model changes, then we re-run the directive
-      if (!attrs.priorityNav){ //normal init
+      ////for dynamic nav items, you can add the binded {{object/model}} into the priorityNav attribute...
+      //// then if your object/model changes, then we re-run the directive
+      if (!attrs.ngPriorityNav){ //normal init
         init(horizontalNav, verticalNav, verticalNavDropDown, verticalNavMoreLinkBubble, true);
       } else { //init with listener
-        attrs.$observe('priorityNav', function(val){
+        attrs.$observe('ngPriorityNav', function (val) {//this is probably not best way, but couldnt find another way
           if (val) {
             init(horizontalNav, verticalNav, verticalNavDropDown, verticalNavMoreLinkBubble, true);
           }
-        });
+        }, true)
       }
 
       //re-init on
@@ -64,4 +66,4 @@ angular.module('ngPriorityNav').directive('ngPriorityNav', function($timeout, $w
         .on('orientationchange', initDebounced);
     }
   };
-});
+}]);
