@@ -33,3 +33,7 @@ You can add some css classes (in addition to the default ones) :
 * ng-priority-nav-more-link-class
 * ng-priority-nav-drop-down-class
 * ng-priority-nav-bubble-class
+
+Is a bit basic at the moment, with a few simple options... To improve!
+
+Has high level unit tests, could probably do with few more.
