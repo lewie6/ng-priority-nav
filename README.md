@@ -18,13 +18,13 @@ Or use Bower (coming soon)
 
 Simple usage:
 ```HTML
-<div priority-nav>
+<div ng-priority-nav>
   <div ng-repeat="navItem in navItems">{{navItem.title}}</div>
 </div>
 ```
 Or Dynamic?... this will listen for changes to your model and re-apply the directive:
 ```HTML
-<div priority-nav="{{navItems}}">
+<div ng-priority-nav="{{navItems}}">
   <div ng-repeat="navItem in navItems">{{navItem.title}}</div>
 </div>
 ```
