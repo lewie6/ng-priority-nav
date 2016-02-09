@@ -126,7 +126,7 @@ angular.module('ngPriorityNav')
       horizontalNav.append(verticalNav); //append it again, so that it is the last item
       if (verticalNavDropDown.children().length > 0) { // if we have vertical items (they dont all fit in horizontal menu)
         verticalNav.removeClass('go-away'); //show it
-        verticalNavMoreLinkBubble.text(verticalNavDropDown.children().length); //add count
+        verticalNavMoreLinkBubble.text((verticalNavDropDown.children().length > 9) ? '9+' : verticalNavDropDown.children().length); //add count
       } else { //if we have no vertical items (they all fit in horizontal menu)
         verticalNav.addClass('go-away');
         verticalNavMoreLinkBubble.text(''); //add count
