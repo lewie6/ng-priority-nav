@@ -1,12 +1,14 @@
 # ng-priority-nav
-A Priority Navigation component for AngularJs
+A Priority Navigation design pattern component for AngularJs. No dependancies.
 
 [DEMO](http://lewie6.github.io/ng-priority-nav/) (need to improve this!)
 
+Simple AngularJs directive that turns your navigation into the priority navigation design pattern...
 
-AngularJs directive that turns your navigation into the priority navigation design pattern.
+What is the priority navigation design pattern?... Say you have 10 navigation items in your horizontal navigation, but only 6 fit inside the width of the navigation, then you get a little "more link" at the end of the items. 
+When you click on the more link, you can see the remaining 4 items in a vertical dropdown.
+Probably easier to see this [DEMO](http://lewie6.github.io/ng-priority-nav/)
 
-No dependancies.
 
 Download the source from dist and include it in your project, then include the module
 ```
